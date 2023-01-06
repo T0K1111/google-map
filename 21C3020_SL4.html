@@ -1,0 +1,74 @@
+<!-- ネットワーク基礎サンプル -->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+ <meta charset="UTF-8">
+<title>現在地取得　マップ表示</title>
+<script type="text/javascript" src="https://me.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=atOEa0ifPWaxmwdvHqomTlytNjxoZc8aMmPy-I_d0aGYuwlUjNevCcrQcM1eWL2q1dXpV8grgdXI_Q-SsRZax_ARI3ccEgYPurIGN2-zda8nO8IyykHueLU0ZDDO88CTY3CG0E0X96dmPmMO0g1ASQ" charset="UTF-8"></script><link rel="stylesheet" crossorigin="anonymous" href="https://me.kis.v2.scr.kaspersky-labs.com/E3E8934C-235A-4B0E-825A-35A08381A191/abn/main.css?attr=aHR0cHM6Ly9jZG4uZGlzY29yZGFwcC5jb20vYXR0YWNobWVudHMvNjk3NDYxNjQ0MTEyMDM1ODcwLzk5ODYwMDAwNzA3NjgxOTAxNS8yMUMzMDIwX1NMNC5odG1s"/></head>
+<body>
+  <main>
+    <p id="gpsInfo">下のボタンを押してね！//</p>
+    <button id="btnGpsCheck">GPS情報を取得する</button>
+ </main>
+ <p>.jsから読んだ地図</p>
+ <div id="map" style="width:620px;height:400px"></div>
+
+ 
+ <a href="javascript:hoge()">地図はこちらから”下記要閲覧”</a>
+ <br>
+ <p2>必ずGPS情報を取得してからご覧ください</p2>
+ <br>
+ <p3>googleのAPIが課金制なので登録できません。よって正しく表示されません</p3>
+ <br>
+ <p4>下の写真は</p4>
+ <a href=https://www.benricho.org/map_iframesample>このサイト</a>
+ <p5>を参考に制作しました</p5>
+ <script type="text/javascript" src="21C3020_SL4.js"></script>
+ <script type="text/javascript" src="https://maps.google.com/maps/api/js"></script>
+ <script type="text/javascript" src="https://map.yahooapis.jp/geoapi/V1/reverseGeoCoder"></script>
+</body>
+
+</html>
+
+
+
+<iframe src="https://maps.google.com/maps?output=embed&ll=35.661301,140.014851&t=m&hl=ja&z=13" width="100%" height="1000" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+
+
+
+
+<form name="form1">
+  <label>緯度は？</label>
+  <input type="text" id="firstform" name="firstform">
+ <br>
+  <label>経度は？</label>
+  <input type="text" id="secondform" name="secondform">
+  <button id="kbutton" onClick="JavaScript:tenyuuryoku();">検索する</button>
+  <br>
+  <label for="resultForm">取得した値: </label>
+    <input type="text" id="resultForm">
+
+    <iframe name="if1" src="https://maps.google.com/maps?output=embed&ll={firstform},{secondform}&t=m&hl=ja&z=13" width="100%" height="1000" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+
+  </form>
+
+<script>
+function JSFL_P_SERCH()
+{
+ var form = document.form1;
+ alert(form.firstform.value);
+ alert(form.secondform.value);
+
+ form.if1.src = "https://maps.google.com/maps?output=embed&ll=" + form.firstform.value + "," +form.secondform.value + "&t=m&hl=ja&z=13";
+ form.fi1.submit();
+
+ document.location.href = "https://www.google.com/maps?q=" + form.firstform.value + "," +form.secondform.value;
+
+}
+
+
+ // ボタンの要素を取得
+ var button = document.getElementById("kbutton");
+
+
+</script>
